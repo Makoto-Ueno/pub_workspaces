@@ -1,15 +1,32 @@
 name: pub_workspaces
-description: "A new Flutter project."
+description: "Multi-app workspace with shared packages"
 publish_to: 'none'
 version: 1.0.0+1
 
 environment:
   sdk: ^3.7.2
 
+# Pub Workspaces設定
+workspace:
+  # 共通パッケージ
+  - packages/core_utils
+  - packages/ui_components
+  # アプリケーション
+  - apps/demo_app
+  - apps/shopping_app
+  - apps/todo_app
+
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
+  # 各アプリへの依存（Flavorで切り替え）
+  demo_app:
+    path: apps/demo_app
+  shopping_app:
+    path: apps/shopping_app
+  todo_app:
+    path: apps/todo_app
 
 dev_dependencies:
   flutter_test:

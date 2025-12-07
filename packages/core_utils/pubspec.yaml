@@ -1,0 +1,12 @@
+name: core_utils
+description: Core utilities for the workspace
+version: 1.0.0
+publish_to: 'none'
+resolution: workspace
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
